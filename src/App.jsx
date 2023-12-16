@@ -1,13 +1,20 @@
 import { useEffect } from 'react';
 
+import './App.css';
+
+const appName = import.meta.env.VITE_APP_NAME;
+
 function App() {
   useEffect(() => {
-    document.title = import.meta.env.VITE_APP_NAME;
+    document.title = appName;
   }, []);
+
   return (
-    <div>
-      <h1>React App</h1>
-    </div>
+    <main className="container">
+      <header>
+        <h1>{appName}</h1>
+      </header>
+    </main>
   );
 }
 
